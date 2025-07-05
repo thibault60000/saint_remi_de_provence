@@ -1,96 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Guide vacances - Saint-Rémy-de-Provence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFFDF8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #FFE3B3 0%, #FFC37D 100%);
+      padding: 40px 20px;
+      text-align: center;
+      color: #5A3E1B;
+    }
+    header h1 {
+      margin: 0; font-size: 2.8em; font-weight: 700;
+    }
+    header p {
+      margin: 10px 0 0; font-size: 1.2em;
+    }
+    .header-link {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    .header-link a {
+      color: #5A3E1B;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    nav {
+      padding: 20px;
+      background: #FFF4E6;
+    }
+    nav ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-wrap: wrap; justify-content: center;
+    }
+    nav li { margin: 5px 10px; }
+    nav a {
+      text-decoration: none;
+      color: #5A3E1B;
+      font-weight: 500;
+      font-size: 0.95em;
+    }
+    .controls {
+      max-width: 800px;
+      margin: 15px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95em;
+    }
+    .controls label { cursor: pointer; }
+    .controls .site-link {
+      text-decoration: none;
+      background: #5A3E1B;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    main {
+      padding: 0 20px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .activity {
+      position: relative;
+      background: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 15px 0;
+      transition: opacity .3s;
+    }
+    .activity.favorited {
+      border: 2px solid #FFD700;
+    }
+    .activity .fav-btn {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: none; border: none;
+      font-size: 1.4em; cursor: pointer;
+      color: #ccc;
+    }
+    .activity.favorited .fav-btn {
+      color: gold;
+    }
+    .activity h2 {
+      margin-top: 0;
+      font-size: 1.4em;
+      color: #BB5500;
+    }
+    .badges {
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      color: #fff;
+      margin-right: 5px;
+    }
+    .badge.distance.green   { background: #4CAF50; }
+    .badge.distance.orange  { background: #FF9800; }
+    .badge.distance.red     { background: #F44336; }
+    .badge.trajet          { background: #2196F3; }
+    .badge.familial        { background: #9C27B0; }
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      color: #999;
+      padding: 10px 0;
+    }
+    /* Impression */
+    @media print {
+      .controls, nav { display: none; }
+      header { page-break-after: avoid; }
+      .activity { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌞 Guide vacances : Saint-Rémy-de-Provence</h1>
+  </header>
+
+  <div class="controls">
+    <label><input type="checkbox" id="toggle-favorites"> Afficher favoris uniquement</label>
+  </div>
+
+  <main>
+    <section id="act1" class="activity" data-id="act1">
+      <button class="fav-btn">☆</button>
+      <h2>1. 🏛️ Site Archéologique de Glanum</h2>
+      <div class="badges">
+        <span class="badge distance green">1 km</span>
+        <span class="badge trajet">5 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Vestiges romains bien conservés offrant un aperçu de l'histoire antique de la région. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act2" class="activity" data-id="act2">
+      <button class="fav-btn">☆</button>
+      <h2>2. 🕍 Monastère Saint-Paul de Mausole</h2>
+      <div class="badges">
+        <span class="badge distance green">1,5 km</span>
+        <span class="badge trajet">5 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Lieu où Vincent Van Gogh a séjourné, avec jardins et sa chambre reconstituée. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act3" class="activity" data-id="act3">
+      <button class="fav-btn">☆</button>
+      <h2>3. 🥖 Marché Provençal de Saint-Rémy</h2>
+      <div class="badges">
+        <span class="badge distance green">0 km</span>
+        <span class="badge trajet">À pied</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Marché animé tous les mercredis matin, produits locaux et artisanaux. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act4" class="activity" data-id="act4">
+      <button class="fav-btn">☆</button>
+      <h2>4. 🏺 Les Antiques</h2>
+      <div class="badges">
+        <span class="badge distance green">2 km</span>
+        <span class="badge trajet">7 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Arc de triomphe et mausolée romains, site emblématique des Alpilles. (<a href="https://seluxia.com" target="_blank">seluxia.com</a>)</p>
+    </section>
+    
+    <section id="act5" class="activity" data-id="act5">
+      <button class="fav-btn">☆</button>
+      <h2>5. 🖼️ Musée Estrine</h2>
+      <div class="badges">
+        <span class="badge distance green">0 km</span>
+        <span class="badge trajet">À pied</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Art moderne (années 1900) dans un superbe hôtel particulier. (<a href="https://anto.info" target="_blank">anto.info</a>)</p>
+    </section>
+    
+    <section id="act6" class="activity" data-id="act6">
+      <button class="fav-btn">☆</button>
+      <h2>6. 🎨 Carrières de Lumières</h2>
+      <div class="badges">
+        <span class="badge distance green">10 km</span>
+        <span class="badge trajet">15 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Spectacle immersif de projections d'œuvres d'art dans une ancienne carrière. (<a href="https://timeinprovence.com" target="_blank">timeinprovence.com</a>)</p>
+    </section>
+    
+    <section id="act7" class="activity" data-id="act7">
+      <button class="fav-btn">☆</button>
+      <h2>7. 🏰 Village des Baux-de-Provence</h2>
+      <div class="badges">
+        <span class="badge distance green">10 km</span>
+        <span class="badge trajet">15 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Village médiéval perché, ruelles pittoresques et vues panoramiques. (<a href="https://seluxia.com" target="_blank">seluxia.com</a>)</p>
+    </section>
+    
+    <section id="act8" class="activity" data-id="act8">
+      <button class="fav-btn">☆</button>
+      <h2>8. 🏞️ Parc Naturel Régional des Alpilles</h2>
+      <div class="badges">
+        <span class="badge distance green">Variable</span>
+        <span class="badge trajet">Selon point d'entrée</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Randonnée, VTT, observation faune & flore. (<a href="https://fr.wikipedia.org/wiki/Parc_naturel_r%C3%A9gional_des_Alpilles" target="_blank">wikipedia.org</a>)</p>
+    </section>
+    
+    <section id="act9" class="activity" data-id="act9">
+      <button class="fav-btn">☆</button>
+      <h2>9. 🎨 Promenade Van Gogh</h2>
+      <div class="badges">
+        <span class="badge distance green">0 km</span>
+        <span class="badge trajet">À pied</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Circuit 1,5 km sur les pas de Van Gogh, avec panneaux explicatifs. (<a href="https://timeinprovence.com" target="_blank">timeinprovence.com</a>)</p>
+    </section>
+    
+    <section id="act11" class="activity" data-id="act11">
+      <button class="fav-btn">☆</button>
+      <h2>11. 🐐 Ferme pédagogique « La Chèvrerie des Alpilles »</h2>
+      <div class="badges">
+        <span class="badge distance green">3 km</span>
+        <span class="badge trajet">5 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Découverte des chèvres, ateliers fabrication de fromages de chèvre. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act12" class="activity" data-id="act12">
+      <button class="fav-btn">☆</button>
+      <h2>12. 🌿 Moulin à huile d’olive Saint-Antoine</h2>
+      <div class="badges">
+        <span class="badge distance green">5 km</span>
+        <span class="badge trajet">10 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Visite guidée du moulin, dégustation d’huiles bio et tapenades. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act13" class="activity" data-id="act13">
+      <button class="fav-btn">☆</button>
+      <h2>13. 🏞️ Lac de Peiroou</h2>
+      <div class="badges">
+        <span class="badge distance green">7 km</span>
+        <span class="badge trajet">12 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Baignade surveillée en été, pédalos et aire de pique-nique. (<a href="https://anto.info" target="_blank">anto.info</a>)</p>
+    </section>
+    
+    <section id="act14" class="activity" data-id="act14">
+      <button class="fav-btn">☆</button>
+      <h2>14. 🚣 Canoë sur la Durance</h2>
+      <div class="badges">
+        <span class="badge distance orange">25 km</span>
+        <span class="badge trajet">30 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Descente tranquille en famille, débarcadère à Barbentane. (<a href="https://timeinprovence.com" target="_blank">timeinprovence.com</a>)</p>
+    </section>
+    
+    <section id="act15" class="activity" data-id="act15">
+      <button class="fav-btn">☆</button>
+      <h2>15. 🚴 Balade en VTT électrique</h2>
+      <div class="badges">
+        <span class="badge distance green">0 km</span>
+        <span class="badge trajet">Sur place</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Location de VTT à assistance électrique, parcours faciles dans les Alpilles. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act16" class="activity" data-id="act16">
+      <button class="fav-btn">☆</button>
+      <h2>16. ⛳ Golf de Servanes (Eygalières)</h2>
+      <div class="badges">
+        <span class="badge distance green">8 km</span>
+        <span class="badge trajet">15 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Parcours 9 et 18 trous dans un cadre boisé. (<a href="https://anto.info" target="_blank">anto.info</a>)</p>
+    </section>
+    
+    <section id="act17" class="activity" data-id="act17">
+      <button class="fav-btn">☆</button>
+      <h2>17. 🏰 Abbaye de Montmajour</h2>
+      <div class="badges">
+        <span class="badge distance green">12 km</span>
+        <span class="badge trajet">18 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Visite des ruines médiévales et panorama depuis les tours. (<a href="https://seluxia.com" target="_blank">seluxia.com</a>)</p>
+    </section>
+    
+    <section id="act18" class="activity" data-id="act18">
+      <button class="fav-btn">☆</button>
+      <h2>18. 🏛️ Palais des Papes (Avignon)</h2>
+      <div class="badges">
+        <span class="badge distance red">45 km</span>
+        <span class="badge trajet">50 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Visite incontournable du plus grand palais gothique d’Europe. (<a href="https://avignon-tourisme.com" target="_blank">avignon-tourisme.com</a>)</p>
+    </section>
+    
+    <section id="act19" class="activity" data-id="act19">
+      <button class="fav-btn">☆</button>
+      <h2>19. 🏰 Château de Tarascon</h2>
+      <div class="badges">
+        <span class="badge distance orange">22 km</span>
+        <span class="badge trajet">25 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Forteresse médiévale en bord de Rhône, animations historiques. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+    
+    <section id="act20" class="activity" data-id="act20">
+      <button class="fav-btn">☆</button>
+      <h2>20. 🎈 Vol en montgolfière au lever du soleil</h2>
+      <div class="badges">
+        <span class="badge distance green">15 km</span>
+        <span class="badge trajet">20 min</span>
+        <span class="badge familial">Oui</span>
+      </div>
+      <p>Survol des Alpilles et vignobles, petit-déjeuner inclus. (<a href="https://provence-plaisirs.com" target="_blank">provence-plaisirs.com</a>)</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Bonnes vacances en Provence ! ☀️
+  </footer>
+
+  <script>
+    // Gestion des favoris
+    const favKey = 'srp_favorites';
+    let favorites = JSON.parse(localStorage.getItem(favKey)) || [];
+    const btns = document.querySelectorAll('.fav-btn');
+    const toggle = document.getElementById('toggle-favorites');
+
+    function saveFav() {
+      localStorage.setItem(favKey, JSON.stringify(favorites));
+    }
+
+    function refreshUI() {
+      document.querySelectorAll('.activity').forEach(sec => {
+        const id = sec.getAttribute('data-id');
+        const isFav = favorites.includes(id);
+        sec.classList.toggle('favorited', isFav);
+        sec.style.opacity = (toggle.checked && !isFav) ? 0.2 : 1;
+      });
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sec = btn.closest('.activity');
+        const id = sec.getAttribute('data-id');
+        const idx = favorites.indexOf(id);
+        if (idx > -1) favorites.splice(idx,1);
+        else favorites.push(id);
+        saveFav();
+        refreshUI();
+      });
+    });
+
+    toggle.addEventListener('change', refreshUI);
+
+    // Au chargement
+    refreshUI();
+  </script>
+
+</body>
 </html>
